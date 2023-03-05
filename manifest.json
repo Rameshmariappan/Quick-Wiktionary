@@ -1,13 +1,9 @@
 {
   "author": "Keerthana Ravichandran",
-
   "manifest_version": 2,
   "name": "Tamil Wiktionary",
   "version": "1.1.0",
-
   "description": "View definitions easily as you browse the web. Double-click any word to view its definition in a small pop-up bubble.",
-
-
   "options_ui": {
     "page": "options/options.html",
     "browser_style": true,
@@ -18,8 +14,7 @@
     {
       "matches": ["<all_urls>"],
       "js": [
-        "common/browser-polyfill.js",
-        "content_scripts/dictionary.js"
+        "common/browser-polyfill.js"
       ]
     }
   ],
@@ -33,7 +28,13 @@
   },
 
   "permissions": [
-    "storage",
-    "https://en.wiktionary.org/"
-  ]
+    "https://*.wiktionary.org/",
+    "https://*.wikipedia.org/",
+    "storage"
+  ],
+  "browser_action": {
+    "default_icon": "icons/logo-12.png",
+    "default_title": "Quick Wiktionary",
+    "default_popup": "popup/popup.html"
+  }
 }
